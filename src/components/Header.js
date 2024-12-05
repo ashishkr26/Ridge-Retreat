@@ -62,21 +62,17 @@ const Header = () => {
         <li className="relative h-[70px] py-1 px-4 hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
           Resources
         </li>
-        {/* <li className="relative h-[70px] p-1 hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
-          Enterprise
-        </li> */}
-      </ul>
+        <li className="relative h-[70px] p-1 hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
+          Cart
+        </li>
+      </ul> 
+
       </div>
+      <button className="relative left-24 p-2 border border-blue-500 hover:border-yellow-600 rounded-lg hover:shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all duration-500 ease-in-out">Book Now</button>
       
       
-      <div className="flex  space-x-4">
-        <button className=" my-2 ml-16 p-2  bg-blue-600 text-white rounded-lg hover:shadow-xl hover:bg-yellow-500 transition-all duration-500 ease-in-out">
-          Start Free Trial
-        </button>
-        <button className="m-2 p-2 border border-blue-500 hover:border-yellow-600 rounded-lg hover:shadow-lg hover:bg-yellow-500 transition-all duration-500 ease-in-out">
-          Schedule Demo
-        </button>
-      </div>
+      
+    
     </div>
   );
 };
