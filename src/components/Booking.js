@@ -1,8 +1,16 @@
 import React from "react";
 import { dayoutPackage } from "../utilities/mockPackages";
+import { useDispatch, useSelector } from "react-redux";
+import { addCartItem } from "../utilities/appSlice";
 
 const Booking = () => {
-  console.log(dayoutPackage || "package");
+  const dispatch = useDispatch()
+  const cartItems = useSelector((state)=>state.cart.cartItems);
+  console.log("cartItems", cartItems.length);
+
+  const handleAddToCart = (pkg)=>{
+    dispatch(addCartItem(pkg.id));
+  }
 
   return (
     <div className="m-4">
@@ -30,6 +38,8 @@ const Booking = () => {
         </thead>
         <tbody>
           {dayoutPackage.map((pkg, index) => (
+             
+           
             <tr key={pkg.id}>
               <td className="border border-gray-200 p-2 shadow-md ">
                 <span className="text-blue-600 hover:text-blue-800 font-semibold">{pkg.name} </span>
@@ -41,8 +51,8 @@ const Booking = () => {
               </td>
               <td className="border border-gray-200">
                 <span className=" flex justify-center">
-                <button className="w-10 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-2xl font-semibold text-center ">+</button>
-                <input className="w-10  m-1 border border-gray-300 text-center  " type="text" placeholder="0"/>
+                <button onClick={handleAddToCart} className="w-10 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-2xl font-semibold text-center ">+</button>
+                <input className="w-10  m-1 border border-gray-300 text-center  " type="text"  value={cartItems.length}/>
                 <button className="w-10 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-2xl font-semibold text-center ">-</button>
                 </span>
                 
@@ -55,8 +65,10 @@ const Booking = () => {
                 </button>
               </td>
             </tr>
+
           ))}
         </tbody>
+      
       </table>
     </div>
   );

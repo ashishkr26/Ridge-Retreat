@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
-import Booking from "./components/Booking";
+// import Booking from "./components/Booking";
 import MainContainer from "./components/MainContainer";
 import appStore from "./utilities/appStore";
 import { Provider } from "react-redux";
+import PackageMenu from "./components/PackageMenu";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -17,7 +18,7 @@ function App() {
         },
         {
           path: "booking", // Booking page
-          element: <Booking />,
+          element: <PackageMenu />,
         },
       ],
     },

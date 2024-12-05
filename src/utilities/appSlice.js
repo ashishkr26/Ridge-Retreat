@@ -10,11 +10,11 @@ const appSlice = createSlice({
             state.cartItems.push(action.payload)
         }),
 
-        removerCartItem : ((state, payload)=>{
+        removeCartItem : ((state, payload)=>{
             state.cartItems.pop()
         })
     }
 });
 
-export const {addCartItem, removerCartItem} = appSlice.actions
+export const {addCartItem, removeCartItem} = appSlice.actions
 export default appSlice.reducer;
