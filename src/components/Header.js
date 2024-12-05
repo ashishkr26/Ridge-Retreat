@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LOGO_URL } from "../utilities/constants";
 
 const Header = () => {
   const [isDialogOpen, SetIsDialogOpen] = useState(false);
@@ -6,24 +7,25 @@ const Header = () => {
   return (
     <div className="flex  items-center space-x-4 shadow-md w-full font-serif z-20 sticky top-0 bg-white">
       <img
-        className="h-20"
+        className="h-20 hover:scale-105"
         alt="logo"
-        src="https://st2.depositphotos.com/5943796/11433/v/450/depositphotos_114330340-stock-illustration-initial-letter-rr-blue-swoosh.jpg"
-      />
+        src={LOGO_URL}
+        />
       <input
-        className="border border-blue-600 rounded-lg px-4 py-1"
+        className="border border-blue-600 rounded-l-full rounded-r-full px-4 py-1 w-72 hover:scale-110 duration-500 ease-in-out transition-all "
         type="text"
         placeholder="Search"
+        
       />
-      <div className="ml-4 relative">
-      <ul className="flex space-x-4 ">
+      <div className="relative left-10">
+      <ul className="flex space-x-2 ">
         <li
           // onMouseEnter={() => timeoutId= setTimeout(()=>{SetIsDialogOpen(true)},500) }
           onMouseEnter={()=>{SetIsDialogOpen(true)}}
           onMouseLeave={() => {
             clearTimeout(timeoutId);
             SetIsDialogOpen(false)}}
-          className="relative w-24 h-[70px] py-1 px-1 hover:bg-sky-100 hover:scale-110 transition-all  ease-in-out hover:shadow-lg leading-[58px] rounded-t-md "
+          className="relative w-24 h-[70px] py-1 px-1 hover:bg-sky-100 hover:scale-110 transition-all  ease-in-out hover:shadow-lg leading-[58px] "
         >
           Features
           {isDialogOpen && (
@@ -45,7 +47,7 @@ const Header = () => {
         </ul>
         }   */}
         </li>
-        <li className="relative h-[70px] py-1  hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
+        <li className="relative h-[70px] py-1 px-4 hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
           Pricing
           {/* {isDialogOpen &&  <ul className="bg-sky-100 w-52 rounded-lg -ml-1">
              <li className="h-12   p-2 aspect-auto">Web Development</li>
@@ -67,7 +69,7 @@ const Header = () => {
       </div>
       
       
-      <div className="flex  space-x-6">
+      <div className="flex  space-x-4">
         <button className=" my-2 ml-16 p-2  bg-blue-600 text-white rounded-lg hover:shadow-xl hover:bg-yellow-500 transition-all duration-500 ease-in-out">
           Start Free Trial
         </button>

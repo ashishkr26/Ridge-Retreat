@@ -1,0 +1,1 @@
+export const LOGO_URL = "https://st2.depositphotos.com/5943796/11433/v/450/depositphotos_114330340-stock-illustration-initial-letter-rr-blue-swoosh.jpg"
