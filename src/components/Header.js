@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LOGO_URL } from "../utilities/constants";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Header = () => {
   const [isDialogOpen, SetIsDialogOpen] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
           Resources
         </li>
         <li className="relative h-[70px] p-1 hover:bg-sky-100 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
-          Cart
+          Cart <ShoppingCartOutlinedIcon/>
         </li>
       </ul> 
 
