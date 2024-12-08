@@ -17,7 +17,7 @@ function App() {
           element: <MainContainer />,
         },
         {
-          path: "booking", // Booking page
+          path: "package", // Booking page
           element: <PackageMenu />,
         },
       ],

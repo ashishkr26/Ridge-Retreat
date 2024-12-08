@@ -2,17 +2,35 @@ import React, { useState } from "react";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addCartItem, removeCartItem } from "../utilities/appSlice";
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
 
 const PackageItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.cartItems);
+
+  const itemQuantity =
+    cartItems.find((cartItem) => cartItem.id === item.id)?.quantity || 0;
+
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+
+  const handleAddToCart = (item) => {
+    dispatch(addCartItem(item));
+  };
+
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeCartItem(item));
+  };
   return (
-    <div className="p-2 my-1 shadow-inner flex bg-pink-50">
+    <div className="p-2 my-1 shadow-inner flex bg-teal-100">
       <div>
         <p className="py-2 w-3/4"> {item.description}</p>
-        <p className=" py-2 font-semibold ">
+        <p className=" py-2 font-semibold text-orange-600 ">
           Price: ₹ {item.price}{" "}
-          <span className="text-black font-bold"> Excluding GST</span>
+          <span className="text-black"> Excluding GST</span>
         </p>
         <p className="py-2 font-semibold">
           {item.includesBreakfast ? "Breakfast : Yes" : null}
@@ -21,7 +39,6 @@ const PackageItem = ({ item }) => {
           {item.includesDinner ? "Dinner : Yes" : null}
         </p>
       </div>
-
 
       <div className="flex flex-col space-y-4 p-4 bg-slate-800 rounded">
         <div>
@@ -52,16 +69,24 @@ const PackageItem = ({ item }) => {
 
       <div className="m-2 bg-white rounded-lg">
         <div className=" flex my-3 mx-2">
-          <button className="w-12 h-12 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-red-3xl font-semibold text-center ">
-            +
+          <button
+            onClick={() => handleAddToCart(item)}
+            className="w-12 h-12 m-1 -pt-3 text-3xl bg-gray-100 hover:bg-gray-200 font-semibold flex items-center justify-center"
+          >
+           <IndeterminateCheckBoxOutlinedIcon/>
           </button>
+
           <input
-            className="w-12 h-12  m-1 border border-gray-300 text-center  "
+            className="w-12 h-12  m-1 border border-gray-300 text-center font-semibold  "
             type="text"
-            value={0}
+            value={itemQuantity}
+            readOnly
           />
-          <button className="w-12 h-12 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center ">
-            -
+          <button
+            onClick={() => handleRemoveFromCart(item)}
+            className="w-12 h-12 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center flex items-center justify-center "
+          >
+            <AddBoxOutlinedIcon/>
           </button>
         </div>
         <button className="shadow-lg mx-3 w-40 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
