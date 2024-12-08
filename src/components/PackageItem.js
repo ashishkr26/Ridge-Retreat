@@ -70,7 +70,7 @@ const PackageItem = ({ item }) => {
       <div className="m-2 bg-white rounded-lg">
         <div className=" flex my-3 mx-2">
           <button
-            onClick={() => handleAddToCart(item)}
+            onClick={() => handleRemoveFromCart(item)}
             className="w-12 h-12 m-1 -pt-3 text-3xl bg-gray-100 hover:bg-gray-200 font-semibold flex items-center justify-center"
           >
            <IndeterminateCheckBoxOutlinedIcon/>
@@ -83,7 +83,7 @@ const PackageItem = ({ item }) => {
             readOnly
           />
           <button
-            onClick={() => handleRemoveFromCart(item)}
+            onClick={() => handleAddToCart(item)}
             className="w-12 h-12 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center flex items-center justify-center "
           >
             <AddBoxOutlinedIcon/>
