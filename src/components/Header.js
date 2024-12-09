@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [isDialogOpen, SetIsDialogOpen] = useState(false);
   const cartItem = useSelector((store) => store.cart.cartItems || []);
-  console.log("cart items aree icon", cartItem);
+  
   const totalQuantity = cartItem.reduce(
     (total, item) => total + (item.quantity || 0),
     0
@@ -81,12 +81,15 @@ const Header = () => {
           <li className="relative h-[70px] py-1 px-4 hover:bg-teal-300 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
             Resources
           </li>
+          <Link to="/cart">
           <li className="relative h-[70px] p-1 hover:bg-teal-300 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
             Cart <ShoppingCartOutlinedIcon />
             <span className="-ml-[18px]  absolute text-xl text-red-600 ">
               {totalQuantity}
             </span>
           </li>
+          </Link>
+       
         </ul>
       </div>
       <button className="relative left-24 p-2 border border-blue-500 hover:border-yellow-600 rounded-lg hover:shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all duration-500 ease-in-out">

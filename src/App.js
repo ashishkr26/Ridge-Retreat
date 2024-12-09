@@ -5,6 +5,7 @@ import MainContainer from "./components/MainContainer";
 import appStore from "./utilities/appStore";
 import { Provider } from "react-redux";
 import PackageMenu from "./components/PackageMenu";
+import Cart from "./components/Cart";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -20,6 +21,10 @@ function App() {
           path: "package", // Booking page
           element: <PackageMenu />,
         },
+        {
+          path:"/cart",
+          element:<Cart/>
+        }
       ],
     },
   ]);
