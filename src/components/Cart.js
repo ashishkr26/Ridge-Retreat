@@ -1,14 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CancellationPolicy from "./CancellationPolicy";
+import { addCartItem, removeCartItem } from "../utilities/appSlice";
+
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.cartItems);
   console.log(cartItems);
+  const handleAddToCart = (item) => {
+    dispatch(addCartItem(item));
+  };
+
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeCartItem(item));
+  };
   return (
-    <div className="bg-gray-200 flex h-screen">
+    <div className="">
       {cartItems.length === 0 ? (
         <div className="">
           There are no items in cart,
@@ -20,30 +32,70 @@ const Cart = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <h1>Your Cart Items</h1>
-          <table className="mt-20 ml-10">
-            <thead className="m-2 p-2  font-extralight">
-              <tr>
-                <th className="m-2 p-2">PACAKGE</th>
-                <th className="m-2 p-2">QUANTITY</th>
-                <th className="m-2 p-2">PRICE</th>
-                <th className="m-2 p-2">SUB TOTAL</th>
-              </tr>
+        <>
+          <div className="w-full  my-10">
+            <table className=" table-auto  border-collapse border w-3/5 font-semibold ml-16">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border border-gray-300 p-4 text-left">
+                    PACKAGE
+                  </th>
+                  <th className="border border-gray-300 p-4 text-center">
+                    QUANTITY
+                  </th>
+                  <th className="border border-gray-300 p-4 text-center">
+                    PRICE
+                  </th>
+                  <th className="border border-gray-300 p-4 text-center">
+                    SUB TOTAL
+                  </th>
+                </tr>
+              </thead>
               <tbody>
-                {cartItems.map((item)=>(
-                  <tr className="items-center">
-                    <td className="m-2 p-2">{item.name}</td>
-                    <td className="m-2 p-2">{item.quantity}</td>
-                    <td className="m-2 p-2">{item.price}</td>
+                {cartItems.map((item) => (
+                  <tr key={item.id} className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-3  text-left">
+                      {item.name}
+                    </td>
+                    <td className="border border-gray-300 p-3 text-center">
+                      {/* {item.quantity} */}
+                      <div className="flex justify-center ">
+                        <button
+                          onClick={() => handleRemoveFromCart(item)}
+                          className="w-10 h-10 m-1 -pt-3 text-3xl bg-gray-100 hover:bg-gray-200 font-semibold flex items-center justify-center"
+                        >
+                          <RemoveIcon />
+                        </button>
+
+                        <input
+                          className="w-10 h-10  m-1 border border-gray-300 text-center font-semibold  "
+                          type="text"
+                          value={item.quantity}
+                          readOnly
+                        />
+                        <button
+                          onClick={() => handleAddToCart(item)}
+                          className="w-10 h-10 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center flex items-center justify-center "
+                        >
+                          <AddIcon />
+                        </button>
+                      </div>
+                    </td>
+                    <td className="border border-gray-300 p-3 text-center">
+                      {item.price}
+                    </td>
+                    <td className="border border-gray-300 p-3 text-center">
+                      {item.quantity * item.price}
+                    </td>
                   </tr>
-                ))
-                }
+                ))}
               </tbody>
-            </thead>
-          </table>
-          <CancellationPolicy/>
-        </div>
+            </table>
+          </div>
+          <div className="m-4 p-4">
+            <CancellationPolicy />
+          </div>
+        </>
       )}
     </div>
   );

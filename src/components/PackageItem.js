@@ -4,8 +4,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, removeCartItem } from "../utilities/appSlice";
-import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const PackageItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -73,7 +73,7 @@ const PackageItem = ({ item }) => {
             onClick={() => handleRemoveFromCart(item)}
             className="w-12 h-12 m-1 -pt-3 text-3xl bg-gray-100 hover:bg-gray-200 font-semibold flex items-center justify-center"
           >
-           <IndeterminateCheckBoxOutlinedIcon/>
+           <RemoveIcon/>
           </button>
 
           <input
@@ -86,7 +86,7 @@ const PackageItem = ({ item }) => {
             onClick={() => handleAddToCart(item)}
             className="w-12 h-12 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center flex items-center justify-center "
           >
-            <AddBoxOutlinedIcon/>
+            <AddIcon/>
           </button>
         </div>
         <button className="shadow-lg mx-3 w-40 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
