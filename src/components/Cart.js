@@ -5,8 +5,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CancellationPolicy from "./CancellationPolicy";
 import { addCartItem, removeCartItem } from "../utilities/appSlice";
 
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,12 @@ const Cart = () => {
   const handleRemoveFromCart = (item) => {
     dispatch(removeCartItem(item));
   };
+
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.quantity * item.price,
+    0
+  );
+
   return (
     <div className="">
       {cartItems.length === 0 ? (
@@ -33,7 +39,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <div className="w-full  my-10">
+          <div className="w-full  my-10 flex">
             <table className=" table-auto  border-collapse border w-3/5 font-semibold ml-16">
               <thead className="bg-gray-100">
                 <tr>
@@ -91,6 +97,27 @@ const Cart = () => {
                 ))}
               </tbody>
             </table>
+            {/*  Cart Total**/}{" "}
+            <div className=" flex flex-col  mx-10 bg-gray-100 shadow-lg p-4 w-1/3">
+              <div className="flex justify-center items-center text-lg p-4 bg-gray-800 text-white font-semibold ">
+                Cart Total
+              </div>
+              <div className="p-4 bg-teal-200 my-2 flex justify-between font-semibold hover:bg-teal-400">
+                <span>SubTotal</span> <span className="">₹ {totalPrice}</span>
+              </div>
+              <div className=" p-4 bg-red-200 my-2 flex justify-between font-semibold hover:bg-red-400">
+                <span>GST- 18%</span> <span>₹ {totalPrice * 0.18}</span>{" "}
+              </div>
+              <div className="bg-green-200 p-4 my-2 flex justify-between font-semibold hover:bg-green-400">
+                <span>Total</span>
+                <span>₹ {totalPrice * 1.18}</span>
+              </div>
+              <div className="flex justify-center p-4">
+                <button className="py-3 px-10 bg-yellow-400 font-semibold rounded-sm hover:bg-yellow-600">
+                  Proceed To Payment
+                </button>
+              </div>
+            </div>
           </div>
           <div className="m-4 p-4">
             <CancellationPolicy />

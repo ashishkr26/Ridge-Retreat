@@ -90,7 +90,7 @@ const PackageItem = ({ item }) => {
           </button>
         </div>
         <button className="shadow-lg mx-3 w-40 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
-          Book Now <ShoppingCartSharpIcon />
+          Book Now <ShoppingCartSharpIcon /> <span className="-ml-4 absolute -mt-3.5">{itemQuantity}</span>
         </button>
       </div>
     </div>

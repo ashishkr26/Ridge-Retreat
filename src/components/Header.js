@@ -16,7 +16,7 @@ const Header = () => {
 
   let timeoutId = null;
   return (
-    <div className="flex  items-center space-x-4 shadow-md w-full font-serif z-20 sticky top-0 bg-white">
+    <div className="flex flex-grow items-center space-x-4 shadow-md w-full font-serif z-20 sticky top-0 bg-white">
       <Link to="/">
         <img className="h-20 hover:scale-105" alt="logo" src={LOGO_URL} />
       </Link>
@@ -42,14 +42,14 @@ const Header = () => {
             {isDialogOpen && (
               <ul className="bg-teal-300 w-48 h-auto mt-4 rounded-b-lg -ml-1 ">
                 <Link to="/package">
-                  <li className="h-auto p-1 -mt-2 aspect-auto text-sm font-serif">
+                  <li className="h-auto p-1 -mt-2 aspect-auto text-sm font-serif hover:bg-gray-200 transition-all duration-300 ease-in-out ">
                     Dayout Packages
                   </li>
                 </Link>
-                <li className="h-auto p-1  text-sm font-serif">
+                <li className="h-auto p-1  text-sm font-serif hover:bg-gray-200 transition-all duration-300 ease-in-out">
                   Night out Packages
                 </li>
-                <li className="h-auto p-1  text-sm font-serif">
+                <li className="h-auto p-1  text-sm font-serif hover:bg-gray-200 transition-all duration-300 ease-in-out">
                   Camping Packages
                 </li>
               </ul>
@@ -57,7 +57,7 @@ const Header = () => {
           </li>
 
           <li className="relative h-[70px]  py-1 px-4 hover:bg-teal-300 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
-            Villa Stay
+            VillaStay
             {/* {isDialogOpen &&
           <ul className="bg-teal-300 w-52 rounded-lg -ml-1">
           <li className="h-12   p-2 aspect-auto">Web Development</li>
@@ -84,7 +84,7 @@ const Header = () => {
           <Link to="/cart">
           <li className="relative h-[70px] p-1 hover:bg-teal-300 hover:scale-110 transition-all duration-500 ease-in-out hover:shadow-lg leading-[58px]">
             Cart <ShoppingCartOutlinedIcon />
-            <span className="-ml-[18px]  absolute text-xl text-red-600 ">
+            <span className="-ml-[18px] -mt-0.5 absolute text-xl text-red-600 ">
               {totalQuantity}
             </span>
           </li>
