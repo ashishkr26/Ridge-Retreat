@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      <SideSticky/> 
+      <SideSticky/>       
       <Outlet/>
     </div>
   )

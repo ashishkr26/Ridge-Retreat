@@ -25,7 +25,7 @@ const PackageItem = ({ item }) => {
     dispatch(removeCartItem(item));
   };
   return (
-    <div className="p-2 my-1 shadow-inner flex bg-teal-100">
+    <div className="p-2 my-1 shadow-inner grid lg:grid-flow-col md:grid-flow-row sm:grid-flow-row bg-teal-100">
       <div className="lg:w-2/3 md:w-1/2 sm:w-1/2 lg:text-lg md:text-base sm:text-xs ">
         <p className="py-2 lg:text-lg md:text-base sm:text-sm">
           {" "}
