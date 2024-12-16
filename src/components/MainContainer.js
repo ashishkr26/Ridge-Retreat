@@ -18,7 +18,7 @@ const MainContainer = () => {
       </div> */}
       {isFormOpen && (
         <div className="fixed bg-white m-4 w-2/3">
-          {" "}
+          
           <EnquiryForm
             isFormOpen={isFormOpen}
             handleCloseForm={handleCloseForm}
