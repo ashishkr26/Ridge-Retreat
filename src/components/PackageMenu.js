@@ -9,20 +9,20 @@ const PackageMenu = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-4xl text-teal-600 px-12 pt-4 font-serif font-semibold">
+      <h1 className="lg:text-4xl md:text-2xl sm:text-base text-teal-600 px-12 pt-4 font-serif font-semibold">
         Available Dayout Packages
       </h1>
-      <div className="w-5/6 m-4 p-4 flex flex-col justify-center">
+      <div className="w-5/6  m-4 p-4 flex flex-col  justify-center">
         {dayoutPackage.map((item, index) => (
           <div key={item.id} className="mb-4">
             {/* Item Name */}
-            <div className="bg-teal-400 text-white p-4 font-semibold text-lg flex justify-between shadow-md ">
+            <div className="bg-teal-400 text-white p-4 font-semibold lg:text-lg md:text-base sm:text-sm flex justify-between shadow-md ">
               {item.name}
               <span
                 onClick={
                   () => setShowIndex(showIndex === index ? null : index) // Toggle current item
                 }
-                className="cursor-pointer text-lg"
+                className="cursor-pointer lg:text-lg md:text-base sm:text-sm"
               >
                 {showIndex === index ? <KeyboardArrowUpTwoToneIcon/> : <KeyboardArrowDownTwoToneIcon/>}
               </span>
