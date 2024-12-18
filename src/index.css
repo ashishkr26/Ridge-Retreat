@@ -23,4 +23,21 @@
     border-radius: 10px;
     text-align: center;
   }
+  /* Target the center image */
+.slick-center img {
+  transform: scale(2); /* Increase size of the center image */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Optional: Reduce the size of images that are not in the center */
+.slick-slide img {
+  transform: scale(0.9); /* Reduce size of non-center images */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Optional: Add some spacing around the center image */
+.slick-center {
+  z-index: 10; /* Bring the center image to the front */
+}
+
   
