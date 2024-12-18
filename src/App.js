@@ -11,7 +11,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Gallery from "./components/Gallery";
 
-
 function App() {
   const appRouter = createBrowserRouter([
     {
@@ -20,20 +19,22 @@ function App() {
       children: [
         {
           path: "/",
-          element:<>
-          <MainContainer />
-          <EnquiryForm/>
-          <Gallery/>
-          </> 
+          element: (
+            <>
+              <MainContainer />
+              <EnquiryForm />
+              <Gallery />
+            </>
+          ),
         },
         {
           path: "package", // Booking page
           element: <PackageMenu />,
         },
         {
-          path:"/cart",
-          element:<Cart/>
-        }
+          path: "/cart",
+          element: <Cart />,
+        },
       ],
     },
   ]);

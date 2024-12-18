@@ -25,7 +25,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-wrapper py-8  w-screen bg-gray-600 my-10 overflow-hidden">
+    <div className="gallery-wrapper py-8  w-screen bg-gray-600 dark:bg-black my-10 overflow-hidden">
       <h2 className="text-2xl text-center mb-6 font-bold text-white font-sans"> Gallery</h2>
       <Slider {...settings}>
         {images.map((image, index) => (

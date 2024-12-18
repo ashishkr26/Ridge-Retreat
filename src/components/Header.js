@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-2 shadow-md w-full font-serif z-20 sticky top-0 bg-white">
+    <div className="flex items-center justify-between px-4 py-2 shadow-md w-full font-serif z-20 sticky top-0 bg-white dark:bg-black dark:text-white">
       {/* Logo */}
       <Link to="/">
         <img
@@ -32,6 +33,8 @@ const Header = () => {
           src={LOGO_URL}
         />
       </Link>
+
+      <DarkModeToggle />
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-4">
