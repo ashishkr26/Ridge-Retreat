@@ -16,7 +16,7 @@ const Gallery = () => {
     speed: 500, // Transition speed
     slidesToShow: 3, // Show 3 images at a time
     centerMode: true, // Enable center mode
-    centerPadding: '60px', // No padding around the center image
+    centerPadding: '20px', // No padding around the center image
     slidesToScroll: 1, // Scroll one image at a time
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Speed of autoplay
@@ -25,15 +25,15 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-container py-8  w-screen">
-      <h2 className="text-2xl text-center mb-6 font-bold">Image Gallery</h2>
+    <div className="gallery-wrapper py-8  w-screen bg-gray-600 my-10 overflow-hidden">
+      <h2 className="text-2xl text-center mb-6 font-bold text-white font-sans"> Gallery</h2>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="gallery-item">
+          <div key={index} className="gallery-item ">
             <img
               src={image}
               alt="/"
-              className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out"
+              className="w-full h-80 rounded-sm  transition-transform duration-300 ease-in-out slick-center shadow-2xl"
             />
           </div>
         ))}

@@ -1,43 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.swiper-container {
-    width: 80%;
-    height: 300px;
-    margin: 0 auto;
-  }
-  
-  .mySwiper {
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .slide-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    height: 100%;
-    font-size: 24px;
-    color: #333;
-    border-radius: 10px;
-    text-align: center;
-  }
-  /* Target the center image */
-.slick-center img {
-  transform: scale(2); /* Increase size of the center image */
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
+
+html, body {
+  overflow-x: hidden;
 }
 
-/* Optional: Reduce the size of images that are not in the center */
-.slick-slide img {
-  transform: scale(0.9); /* Reduce size of non-center images */
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  
+  .slick-slider .slick-center img {
+    transform: scale(1.5); /* Corrected scale value */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slick-slider .slick-slide img {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.gallery-item{
+  padding: "2px";
+  margin:"2px"
 }
 
-/* Optional: Add some spacing around the center image */
-.slick-center {
-  z-index: 10; /* Bring the center image to the front */
-}
+
 
   

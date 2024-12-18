@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EnquiryForm from "./EnquiryForm";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import Gallery from "./Gallery";
+
 
 const MainContainer = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -50,7 +50,7 @@ const MainContainer = () => {
         </div>
       </div>
 
-      <Gallery/>
+      
     </div>
   );
 };

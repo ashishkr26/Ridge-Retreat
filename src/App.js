@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import EnquiryForm from "./components/EnquiryForm";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Gallery from "./components/Gallery";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           element:<>
           <MainContainer />
           <EnquiryForm/>
+          <Gallery/>
           </> 
         },
         {

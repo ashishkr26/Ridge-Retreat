@@ -5,7 +5,7 @@ const EnquiryForm = ({ isFormOpen, handleCloseForm }) => {
   // const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <>
-      <div className={`flex justify-center ${isFormOpen ? "mt-4" : "mt-10"} `}>
+      <div className={`flex justify-center ${isFormOpen ? "mt-4" : "mt-10"} z-50`}>
         <form className="w-2/3 m-2 p-2 shadow-lg bg-gray-300 ">
           {isFormOpen && (
             <div className="flex justify-between m-2 p-2">
