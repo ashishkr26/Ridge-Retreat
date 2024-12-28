@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, removeCartItem } from "../utilities/appSlice";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useNavigate } from "react-router";
 
 const PackageItem = ({ item }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.cartItems);
 
@@ -92,7 +94,7 @@ const PackageItem = ({ item }) => {
             <AddIcon />
           </button>
         </div>
-        <button className="text-base md:text-sm sm:text-xs shadow-lg mx-3 lg:w-40 md:w-24 sm:w-16 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
+        <button onClick={()=>navigate("/cart")} className="text-base md:text-sm sm:text-xs shadow-lg mx-3 lg:w-40 md:w-24 sm:w-16 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
           Book Now <ShoppingCartSharpIcon />
           <span className="-ml-4 absolute -mt-3.5">{itemQuantity}</span>
         </button>

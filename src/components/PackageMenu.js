@@ -9,9 +9,9 @@ const PackageMenu = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="lg:text-4xl md:text-2xl sm:text-base text-teal-600 px-12 pt-4 font-serif font-semibold">
+      <div className="lg:text-4xl md:text-2xl sm:text-base text-teal-600 px-12 pt-4 font-serif font-semibold">
         Available Dayout Packages
-      </h1>
+      </div>
       <div className="w-5/6  m-4 p-4 flex flex-col  justify-center">
         {dayoutPackage.map((item, index) => (
           <div key={item.id} className="mb-4">

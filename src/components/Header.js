@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-2 shadow-md w-full font-serif z-20 sticky top-0 bg-white dark:bg-black dark:text-white">
+    <div className="flex items-center justify-between px-4 py-2 shadow-md w-full font-serif z-100 sticky top-0 bg-white dark:bg-black dark:text-white">
       {/* Logo */}
       <Link to="/">
         <img
@@ -95,7 +95,7 @@ const Header = () => {
       {/* Mobile Menu Toggle */}
       <div className="flex md:hidden">
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          {isMobileMenuOpen ? <MenuIcon /> : <CloseIcon />}
         </button>
       </div>
 
@@ -126,9 +126,15 @@ const Header = () => {
                 <span className="text-red-600">{totalQuantity}</span>
               </li>
             </Link>
-            <button className="p-2 border border-blue-500 hover:border-yellow-600 rounded-lg hover:bg-yellow-500">
-              Book Now
-            </button>
+
+            <li>
+              <button
+                onClick={() => console.log("book now click")}
+                className="p-2 border border-blue-500 hover:border-yellow-600 rounded-lg hover:bg-yellow-500"
+              >
+                Book Now
+              </button>
+            </li>
           </ul>
         </div>
       )}
