@@ -7,8 +7,10 @@ import { addCartItem, removeCartItem } from "../utilities/appSlice";
 
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.cartItems);
   console.log(cartItems);
@@ -28,12 +30,19 @@ const Cart = () => {
   return (
     <div className="">
       {cartItems.length === 0 ? (
-        <div className="">
-          There are no items in cart,
-          <span>
-            Add To Cart <ShoppingCartOutlinedIcon /> <DirectionsWalkIcon />
+        <div className=" h-96 flex justify-center items-center">
+          <span className="text-lg font-semibold">
+            {" "}
+            There are no items in cart, Add To Cart
           </span>
-          <button className="m-2 p-2 border border-yellow-400 bg-yellow-400 ">
+          <span>
+            <DirectionsWalkIcon sx={{ fontSize: 64 }} />{" "}
+            <ShoppingCartOutlinedIcon sx={{ fontSize: 64 }} />
+          </span>
+          <button
+            onClick={() => navigate("/")}
+            className="m-2 p-2 border border-yellow-400 bg-yellow-400 font-semibold hover:scale-105 transition-all ease-in-out duration-300"
+          >
             Go To Home
           </button>
         </div>

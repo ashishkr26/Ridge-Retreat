@@ -8,7 +8,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Footer = () => {
   return (
     <>
-      <div className="bg-teal-600 dark:bg-white dark:text-black h-96 mt-16 text-white grid grid-cols-12 font-poppins p-4">
+      <div className="bg-teal-600 dark:bg-black dark:text-white h-96 mt-16 text-white grid grid-cols-12 font-poppins p-4">
         <div className="py-4 pl-10 col-span-2">
           <span className="text-lg font-semibold">Important Links</span>
           <ul className="text-sm">
