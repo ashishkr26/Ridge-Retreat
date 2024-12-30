@@ -16,7 +16,7 @@ const Map = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-black">
       <div className="w-full max-w-4xl h-96 shadow-lg rounded-lg overflow-hidden">
-        <LoadScript googleMapsApiKey={ process.env.GOOGLE_API_KEY}>
+        <LoadScript googleMapsApiKey={process.env.GOOGLE_API_KEY}>
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}
