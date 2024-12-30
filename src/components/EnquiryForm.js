@@ -8,7 +8,7 @@ const EnquiryForm = ({ isFormOpen, handleCloseForm }) => {
       <div
         className={`flex justify-center ${
           isFormOpen ? "" : "mt-10"
-        } z-50 dark:bg-gray-800`}
+        } z-100 dark:bg-gray-800`}
       >
         <form
           className={`${
