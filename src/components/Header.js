@@ -47,35 +47,35 @@ const Header = () => {
           <li
             onMouseEnter={() => SetIsDialogOpen(true)}
             onMouseLeave={() => SetIsDialogOpen(false)}
-            className="relative px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all"
+            className="relative px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer"
           >
             Packages
             {isDialogOpen && (
               <ul className="absolute bg-teal-300 w-48 -ml-4 mt-2 rounded-b-lg shadow-lg">
                 <Link to="/package">
-                  <li className="px-4 py-2 hover:bg-gray-200">
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
                     Dayout Packages
                   </li>
                 </Link>
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
                   Night out Packages
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
                   Camping Packages
                 </li>
               </ul>
             )}
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all">
+          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
             VillaStay
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all">
+          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
             Camping
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all">
+          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
             Pricing
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all">
+          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
             Resources
           </li>
           <Link to="/cart">

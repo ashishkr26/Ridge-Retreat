@@ -6,6 +6,11 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Footer = () => {
+  const phoneNumber = "8123897887"; // Replace with your WhatsApp number
+  const message = "Hi, I need help!"; // Default message
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
   return (
     <>
       <div className="bg-teal-600 dark:bg-black dark:text-white h-96 mt-16 text-white grid grid-cols-12 font-poppins p-4">
@@ -23,23 +28,26 @@ const Footer = () => {
         <div className="p-4 col-span-3">
           <span className="font-semibold text-lg">Social Media presence</span>
           <ul className="text-sm">
-            <li>
+            <li className="cursor-pointer">
               <FacebookOutlinedIcon /> Facebook
             </li>
-            <li>
+            <li className="cursor-pointer">
               <TwitterIcon /> Twitter
             </li>
-            <li>
+            <li className="cursor-pointer">
               <InstagramIcon /> Instagram
             </li>
-            <li>
+            <li className="cursor-pointer">
               <LinkedInIcon /> LinkedIn
             </li>
-            <li>
+            <li className="cursor-pointer">
               <YouTubeIcon /> YouTube
             </li>
-            <li>
-              <WhatsAppIcon /> WhatsApp
+            <li className="cursor-pointer">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon />
+              </a>{" "}
+              WhatsApp
             </li>
           </ul>
         </div>

@@ -16,7 +16,7 @@ const PackageMenu = () => {
         {dayoutPackage.map((item, index) => (
           <div key={item.id} className="mb-4">
             {/* Item Name */}
-            <div className="bg-teal-400 text-white p-4 font-semibold lg:text-lg md:text-base sm:text-sm flex justify-between shadow-md ">
+            <div className="bg-teal-400 dark:bg-teal-800 text-white p-4 font-semibold lg:text-lg md:text-base sm:text-sm flex justify-between shadow-md ">
               {item.name}
               <span
                 onClick={
