@@ -47,11 +47,11 @@ const Header = () => {
           <li
             onMouseEnter={() => SetIsDialogOpen(true)}
             onMouseLeave={() => SetIsDialogOpen(false)}
-            className="relative px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer"
+            className="relative px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all cursor-pointer"
           >
             Packages
             {isDialogOpen && (
-              <ul className="absolute bg-teal-300 w-48 -ml-4 mt-2 rounded-b-lg shadow-lg">
+              <ul className="absolute bg-teal-400 w-48 -ml-4 mt-2 rounded-b-lg shadow-lg">
                 <Link to="/package">
                   <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
                     Dayout Packages
@@ -66,20 +66,20 @@ const Header = () => {
               </ul>
             )}
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
+          <li className="px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all cursor-pointer">
             VillaStay
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
+          <li className="px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all cursor-pointer">
             Camping
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
+          <li className="px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all cursor-pointer">
             Pricing
           </li>
-          <li className="px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all cursor-pointer">
+          <li className="px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all cursor-pointer">
             Resources
           </li>
           <Link to="/cart">
-            <li className="relative px-4 py-2 hover:bg-teal-300 hover:scale-110 transition-all">
+            <li className="relative px-4 py-2 hover:bg-teal-400 hover:scale-110 transition-all">
               Cart <ShoppingCartOutlinedIcon />
               <span className="absolute -top-1 right-6 text-red-600 text-sm">
                 {totalQuantity}
@@ -105,23 +105,23 @@ const Header = () => {
           <ul className="flex flex-col space-y-2 p-4">
             <li
               onClick={() => handleMobileMenuClick("/")}
-              className="hover:bg-teal-300 px-4 py-2"
+              className="hover:bg-teal-400 px-4 py-2"
             >
               Home
             </li>
 
             <li
               onClick={() => handleMobileMenuClick("/package")}
-              className="hover:bg-teal-300 px-4 py-2"
+              className="hover:bg-teal-400 px-4 py-2"
             >
               Packages
             </li>
-            <li className="hover:bg-teal-300 px-4 py-2">VillaStay</li>
-            <li className="hover:bg-teal-300 px-4 py-2">Camping</li>
-            <li className="hover:bg-teal-300 px-4 py-2">Pricing</li>
-            <li className="hover:bg-teal-300 px-4 py-2">Resources</li>
+            <li className="hover:bg-teal-400 px-4 py-2">VillaStay</li>
+            <li className="hover:bg-teal-400 px-4 py-2">Camping</li>
+            <li className="hover:bg-teal-400 px-4 py-2">Pricing</li>
+            <li className="hover:bg-teal-400 px-4 py-2">Resources</li>
             <Link to="/cart">
-              <li className="hover:bg-teal-300 px-4 py-2">
+              <li className="hover:bg-teal-400 px-4 py-2">
                 Cart <ShoppingCartOutlinedIcon />
                 <span className="text-red-600">{totalQuantity}</span>
               </li>
