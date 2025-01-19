@@ -13,7 +13,7 @@ const EnquiryForm = ({ isFormOpen, handleCloseForm }) => {
         <form
           className={`${
             isFormOpen ? "w-full" : "w-2/3"
-          } m-2 p-2 shadow-lg bg-gray-300 dark:bg-gray-500 dark:text-white `}
+          } m-2 p-2 shadow-lg bg-gray-300 dark:bg-gray-500 dark:text-black `}
         >
           {isFormOpen && (
             <div className="flex justify-between m-2 p-2">
@@ -26,11 +26,17 @@ const EnquiryForm = ({ isFormOpen, handleCloseForm }) => {
               </span>
             </div>
           )}
-
-          <label className="m-4 p-2 font-poppins text-gray-700 text-sm">
+          {isFormOpen ? (
+            <div></div>
+          ) : (
+            <div className="text-center m-2 p-2 text-lg font-semibold">
+              Enter Your Details, and We will reach back to you..!
+            </div>
+          )}
+          <label className="m-4 p-2 font-poppins text-gray-700 dark:text-white text-sm">
             Your Full Name
           </label>
-          <p className="text-xs text-blue-500 mx-6">
+          <p className="text-xs text-blue-500 mx-6 ">
             (Please enter your complete name in the provided field.)
           </p>
           <div className="mx-4">

@@ -33,7 +33,7 @@ const MainContainer = () => {
         </div>
       )}
       <img
-        className="w-full h-auto shadow-lg p-4 dark:bg-gray-500"
+        className="w-full h-screen  shadow-lg p-4 dark:bg-gray-500"
         alt="slider"
         src="https://w0.peakpx.com/wallpaper/392/364/HD-wallpaper-luxury-resort-resort-beach-beautiful-magic-sunset-pool-lights-luxury.jpg"
       />
