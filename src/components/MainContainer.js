@@ -39,7 +39,7 @@ const MainContainer = () => {
       />
 
       <div className="fixed right-16 bottom-10 z-20 flex group">
-        <span className="bg-white hidden m-1 p-2 group-hover:block">
+        <span className="bg-white hidden m-1 p-2 group-hover:block rounded-md">
           {hoverMessage}
         </span>
         <div className="bg-green-700 rounded-full p-1">
