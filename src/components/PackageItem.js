@@ -19,6 +19,16 @@ const PackageItem = ({ item }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
+  // Calculate the number of days
+  const calculateDays = () => {
+    if (startDate && endDate) {
+      const timeDifference = endDate.getTime() - startDate.getTime();
+      const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+      return daysDifference > 0 ? daysDifference : 0;
+    }
+    return 0;
+  };
+
   const handleAddToCart = (item) => {
     dispatch(addCartItem(item));
   };
@@ -26,16 +36,15 @@ const PackageItem = ({ item }) => {
   const handleRemoveFromCart = (item) => {
     dispatch(removeCartItem(item));
   };
+
   return (
     <div className="p-2 my-1 shadow-inner grid lg:grid-flow-col md:grid-flow-row sm:grid-flow-row bg-teal-100">
       <div className="lg:w-2/3 md:w-1/2 sm:w-1/2 lg:text-lg md:text-base sm:text-xs ">
         <p className="py-2 lg:text-lg md:text-base sm:text-sm">
-          {" "}
           {item.description}
         </p>
-        <p className=" py-2 font-semibold text-orange-600 ">
-          Price: ₹ {item.price}{" "}
-          <span className="text-black"> Excluding GST</span>
+        <p className="py-2 font-semibold text-orange-600 ">
+          Price: ₹ {item.price} <span className="text-black"> Excluding GST</span>
         </p>
         <p className="py-2 font-semibold">
           {item.includesBreakfast ? "Breakfast : Yes" : null}
@@ -69,34 +78,55 @@ const PackageItem = ({ item }) => {
             placeholderText="Select check-out date"
           />
         </div>
+
+        <div className="text-gray-100 font-semibold">
+          Total Days: {calculateDays()}
+        </div>
       </div>
 
-      <div className="m-2 bg-white rounded-lg">
-        <div className=" flex my-3 mx-2">
+      <div className="p-2 bg-white p-4 shadow-md">
+        <label className="block text-gray-700 font-medium px-4 py-2">
+          Number of Tickets
+        </label>
+        <div className="flex items-center my-3 mx-2">
+          {/* Decrease Button */}
           <button
             onClick={() => handleRemoveFromCart(item)}
-            className=" lg:w-12  md:w-8 sm:w-6 m-1 -pt-3 text-3xl bg-gray-100 hover:bg-gray-200 font-semibold flex items-center justify-center"
+            className="w-10 h-10 sm:w-8 sm:h-8 lg:w-12 lg:h-12 m-1 bg-gray-100 hover:bg-gray-200 text-xl font-semibold flex items-center justify-center rounded-md"
+            aria-label="Decrease quantity"
           >
             <RemoveIcon />
           </button>
 
+          {/* Quantity Input */}
           <input
-            className="w-12 sm:w-8 md:w-10 lg:w-12 lg:m-1 border lg:border-gray-300 text-center font-semibold"
+            className="w-12 sm:h-10 lg:h-12 border border-gray-300 text-center font-semibold rounded-md"
             type="text"
             value={itemQuantity}
             readOnly
+            aria-label="Number of tickets"
           />
 
+          {/* Increase Button */}
           <button
-            onClick={() => handleAddToCart(item)}
-            className=" lg:w-12  md:w-8 sm:w-6 m-1 p-1 bg-gray-100 hover:bg-gray-200 text-3xl font-semibold text-center flex items-center justify-center "
+            onClick={() => handleAddToCart(item, )}
+            className="w-10 h-10 sm:w-8 sm:h-8 lg:w-12 lg:h-12 m-1 bg-gray-100 hover:bg-gray-200 text-xl font-semibold flex items-center justify-center rounded-md"
+            aria-label="Increase quantity"
           >
             <AddIcon />
           </button>
         </div>
-        <button onClick={()=>navigate("/cart")} className="text-base md:text-sm sm:text-xs shadow-lg mx-3 lg:w-40 md:w-24 sm:w-16 bg-slate-800 text-white  py-3 px-4 font-semibold rounded-sm  hover:bg-slate-500">
-          Book Now <ShoppingCartSharpIcon />
-          <span className="-ml-4 absolute -mt-3.5">{itemQuantity}</span>
+
+        {/* Book Now Button */}
+        <button
+          onClick={() => navigate("/cart")}
+          className="text-sm lg:text-base shadow-lg mx-3 w-full lg:w-40 bg-slate-800 text-white py-2 px-4 font-semibold rounded-md hover:bg-slate-600 flex items-center justify-center relative"
+        >
+          Book Now
+          <ShoppingCartSharpIcon className="ml-2" />
+          <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {itemQuantity}
+          </span>
         </button>
       </div>
     </div>
