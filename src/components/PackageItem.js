@@ -84,7 +84,7 @@ const PackageItem = ({ item }) => {
         </div>
       </div>
 
-      <div className="p-2 bg-white p-4 shadow-md">
+      <div className="p-2 bg-white shadow-md">
         <label className="block text-gray-700 font-medium px-4 py-2">
           Number of Tickets
         </label>

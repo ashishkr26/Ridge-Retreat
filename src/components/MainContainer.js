@@ -44,7 +44,7 @@ const MainContainer = () => {
         </span>
         <div className="bg-green-700 rounded-full p-1">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <WhatsAppIcon sx={{ fontSize: "3.5rem", color: "white" }} />
+            <WhatsAppIcon sx={{ fontSize: {lg:"3.5rem", md:"2rem", sm:"2rem", xs:"2rem"}, color: "white" }} />
           </a>
         </div>
       </div>

@@ -95,7 +95,7 @@ const Header = () => {
       {/* Mobile Menu Toggle */}
       <div className="flex md:hidden">
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <MenuIcon /> : <CloseIcon />}
+          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
@@ -105,23 +105,23 @@ const Header = () => {
           <ul className="flex flex-col space-y-2 p-4">
             <li
               onClick={() => handleMobileMenuClick("/")}
-              className="hover:bg-teal-400 px-4 py-2"
+              className="hover:bg-teal-400 px-4 py-2 cursor-pointer"
             >
               Home
             </li>
 
             <li
               onClick={() => handleMobileMenuClick("/package")}
-              className="hover:bg-teal-400 px-4 py-2"
+              className="hover:bg-teal-400 px-4 py-2 cursor-pointer"
             >
               Packages
             </li>
-            <li className="hover:bg-teal-400 px-4 py-2">VillaStay</li>
-            <li className="hover:bg-teal-400 px-4 py-2">Camping</li>
-            <li className="hover:bg-teal-400 px-4 py-2">Pricing</li>
-            <li className="hover:bg-teal-400 px-4 py-2">Resources</li>
+            <li className="hover:bg-teal-400 px-4 py-2 cursor-pointer">VillaStay</li>
+            <li className="hover:bg-teal-400 px-4 py-2 cursor-pointer">Camping</li>
+            <li className="hover:bg-teal-400 px-4 py-2 cursor-pointer">Pricing</li>
+            <li className="hover:bg-teal-400 px-4 py-2 cursor-pointer">Resources</li>
             <Link to="/cart">
-              <li className="hover:bg-teal-400 px-4 py-2">
+              <li className="hover:bg-teal-400 px-4 py-2 cursor-pointer">
                 Cart <ShoppingCartOutlinedIcon />
                 <span className="text-red-600">{totalQuantity}</span>
               </li>
