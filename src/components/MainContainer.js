@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EnquiryForm from "./EnquiryForm";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import resort from "../utilities/images/resort.jpg"
 
 const MainContainer = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -35,7 +36,7 @@ const MainContainer = () => {
       <img
         className="w-full h-screen  shadow-lg p-4 dark:bg-gray-500"
         alt="slider"
-        src="https://w0.peakpx.com/wallpaper/392/364/HD-wallpaper-luxury-resort-resort-beach-beautiful-magic-sunset-pool-lights-luxury.jpg"
+        src={resort}
       />
 
       <div className="fixed right-16 bottom-10 z-20 flex group">
